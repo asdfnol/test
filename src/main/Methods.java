@@ -1,13 +1,23 @@
 public class Methods {
-    public static int squared(int n) {
+    public int squared(int n) {
         return n * n;
     }
-    public static int fibonacci(int n, int n1) {
+    /**
+    public int fibonacci(int n, int n1) {
         int sum = n + n1;
-        if ( sum >= 4200 ) {
-            return 0;
-        } else {
-            return (fibonacci(n1, sum));
+        if (
+        // fibonacci(0, 1) returns fibonacci(1, 1)
+        // fibonacci(1, 1) returns fibonacci(1, 2)
+    }
+    **/
+    public int factorial(int n) {
+        if (n == 0) {
+            return 1;
         }
+        return n * factorial(n - 1);
+        // factorial(3) returns factorial(3 * factorial(2))
+        // factorial(2) returns factorial(2 * factorial(1))
+        // factorial(1) returns factorial(1 * factorial(0))
+        // factorial(0) returns 1
     }
 }
