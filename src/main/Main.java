@@ -4,5 +4,6 @@ public class Main {
         Methods m = new Methods();
         int n = 2;
         System.out.println(m.squared(n));
+        // yay i get it, lots to learn tho.
     }
 }
