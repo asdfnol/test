@@ -35,4 +35,18 @@ public class Methods {
         }
         return b;
     }
+    public int choose(int n, int k) {
+        int num = factorial(n);
+        int den = factorial(k) * factorial(n - k);
+        int combination = num / den;
+        return combination;
+    }
+    // returns nth line of pascal triangle
+    public int[] pascalArray(int n) {
+        int[] a = new int[n + 1];
+        for ( int i = 0; i <= n; i++ ) {
+            a[i] = choose(n, i);
+        }
+        return a;
+    }
 }
