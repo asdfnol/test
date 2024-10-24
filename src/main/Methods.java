@@ -1,10 +1,18 @@
 package main;
 public class Methods {
-    public int factorial(int n) {
-        if (n == 0) {
-            return 1;
+    public int[] intToBinary(int n) {
+        int[] t = new int[32];
+        for ( int i = 0; i < t.length; i++ ) {
+           t[i] = n % 2;
+           n = n / 2;
         }
-        return n * factorial(n - 1);
+        int[] b = new int[t.length];
+        int j = 0;
+        for ( int i = t.length - 1; i >= 0; i-- ) {
+           b[j] = t[i];
+           j++;
+        }
+        return b;
     }
     // returns nth nubmer in fibonacci sequence
     public int fibonacci(int n) {
@@ -21,32 +29,16 @@ public class Methods {
         }
         return x;
     }
-    public int[] intToBinary(int n) {
-        int[] t = new int[32];
-        for ( int i = 0; i < t.length; i++ ) {
-           t[i] = n % 2;
-           n = n / 2;
+    public double factorial(double n) {
+        if (n == 0.0) {
+            return 1.0;
         }
-        int[] b = new int[t.length];
-        int j = 0;
-        for ( int i = t.length - 1; i >= 0; i-- ) {
-           b[j] = t[i];
-           j++;
-        }
-        return b;
+        return n * factorial(n - 1.0);
     }
-    public int choose(int n, int k) {
-        int num = factorial(n);
-        int den = factorial(k) * factorial(n - k);
-        int combination = num / den;
+    public double choose(double n, double k) {
+        double num = factorial(n);
+        double den = factorial(k) * factorial(n - k);
+        double combination = num / den;
         return combination;
-    }
-    // returns nth line of pascal triangle
-    public int[] pascalArray(int n) {
-        int[] a = new int[n + 1];
-        for ( int i = 0; i <= n; i++ ) {
-            a[i] = choose(n, i);
-        }
-        return a;
     }
 }
