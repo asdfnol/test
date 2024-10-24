@@ -3,10 +3,18 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        Patterns p = new Patterns();
-        System.out.print("rows: ");
-        int n = scan.nextInt();
-        p.numberTriangle(n);
+        Methods m = new Methods();
+        int[] arr = {1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3};
+        for ( int e : arr ) {
+            System.out.print(e + " ");
+        }
+        System.out.println();
+
+        int[] noDupes = m.removeDuplicates(arr);
+        for ( int e : noDupes ) {
+            System.out.print(e + " ");
+        }
+        System.out.println();
+
     }
 }
