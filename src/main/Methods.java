@@ -76,21 +76,58 @@ public class Methods {
          *
          */
     }
-    // given that initArr is sorted.
+    
+    // 
     public int[] removeDuplicates(int[] initArr) {
-        int length = initArr.length;
-        // for each iteration in given array:
-        //     if an element is repeated after initial element, length - 1
-        for ( int i = 0; i < initArr.length; i++ ) {
-            for ( int j = i + 1; j < initArr.length - 1; j++ ) {
-                if ( initArr[i] == initArr[j] ) {
-                    length -= 1;
-                } 
+        int[] arr = initArr;
+        for ( int i = 0; i < arr.length; i++ ) {
+            int x = arr[i];
+            
+        }
+    }
+
+    /* ALGORITHM PRACTICE */
+    /* i'm doing all of this on my own */
+    /* no google, just.. a prompt ya know, i gotta know what i wanna do */
+
+    public int[] selectionSort(int[] initArr) {
+        int[] arr = initArr; 
+        // big boi loop
+        for ( int i = 0; i < arr.length; i++ ) {
+            int smallest = Integer.MAX_VALUE;
+            int indexOfSmallest = -1;
+            // find smallest 
+            for ( int j = i; j < arr.length; j++ ) {
+                if (arr[j] < smallest) {
+                    smallest = arr[j];
+                    indexOfSmallest = j;
+                }
+            }
+            // and swap
+            int temp = arr[i];
+            arr[i] = arr[indexOfSmallest];
+            arr[indexOfSmallest] = temp;
+        }
+        return arr;
+    } // okay that was first try.
+
+    // while loops are my best friend now :D.
+    public int[] insertionSort(int[] initArr) {
+        int[] arr = initArr;
+        for ( int i = 1; i < arr.length; i++ ) {
+            int x = arr[i];
+            int j = i;
+            while ( j > 0 && arr[j - 1] > arr[j] ) {
+                arr[j] = arr[j - 1];
+                arr[j - 1] = x;
+                j--;
             }
         }
-        int[] arr = new int[length];
-        return arr; 
-        // my brain doesn't work like this anymore.
-        // i need iterative tracing built into my brain again.
+        return arr;
     }
+    
+    // merge sort
+    // sequential search
+    // binary search
+
 }

@@ -3,18 +3,24 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
         Methods m = new Methods();
-        int[] arr = {1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3};
-        for ( int e : arr ) {
-            System.out.print(e + " ");
+        System.out.print("n = ");
+        int n = scan.nextInt();
+        int[] arr = new int[n];
+        for ( int i = 0; i < n; i++ ) {
+            System.out.print("index " + i + ": ");
+            int input = scan.nextInt();
+            arr[i] = input;
+        }
+        printArray(arr);
+        int[] noDupesArray = m.removeDuplicates(arr);
+        printArray(noDupesArray);
+    }
+    private static void printArray(int[] a) {
+        for ( int i : a ) {
+            System.out.print(i + " ");
         }
         System.out.println();
-
-        int[] noDupes = m.removeDuplicates(arr);
-        for ( int e : noDupes ) {
-            System.out.print(e + " ");
-        }
-        System.out.println();
-
     }
 }
