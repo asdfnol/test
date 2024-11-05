@@ -1,5 +1,5 @@
 package main;
-public class Methods {
+public class MethodApps implements MethodInterface {
     public int[] intToBinary(int n) {
         int[] t = new int[32];
         for ( int i = 0; i < t.length; i++ ) {
@@ -77,15 +77,6 @@ public class Methods {
          */
     }
     
-    // 
-    public int[] removeDuplicates(int[] initArr) {
-        int[] arr = initArr;
-        for ( int i = 0; i < arr.length; i++ ) {
-            int x = arr[i];
-            
-        }
-    }
-
     /* ALGORITHM PRACTICE */
     /* i'm doing all of this on my own */
     /* no google, just.. a prompt ya know, i gotta know what i wanna do */
@@ -129,5 +120,6 @@ public class Methods {
     // merge sort
     // sequential search
     // binary search
+    // removeDuplicates 
 
 }

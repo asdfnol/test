@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Methods m = new Methods();
+        MethodApps m = new MethodApps();
         System.out.print("n = ");
         int n = scan.nextInt();
         int[] arr = new int[n];
@@ -14,8 +14,7 @@ public class Main {
             arr[i] = input;
         }
         printArray(arr);
-        int[] noDupesArray = m.removeDuplicates(arr);
-        printArray(noDupesArray);
+        printArray(m.insertionSort(arr));
     }
     private static void printArray(int[] a) {
         for ( int i : a ) {
