@@ -13,7 +13,8 @@ public interface MethodInterface {
     int[] arrayRotation(int[] a, int d);
     int[] selectionSort(int[] initArr);
     int[] insertionSort(int[] initArr);
-    int[] mergeSort(int[] initArr);
+    // int[] mergeSort(int[] initArr);
+    // int[] merge(int[] left, int[] right);
     int sequentialSearch(int[] arr, int x);
     int binarySearch(int[] arr, int x);
     /*

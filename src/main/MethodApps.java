@@ -118,16 +118,43 @@ public class MethodApps implements MethodInterface {
             return arr;
         }
         int mid = arr.length / 2;
-        int[] left; // recursively split lefts 
-        int[] right;
-        return arr;
+        int[] cutArrayLeft = Arrays.copyOfRange(arr, 0, mid);
+        int[] cutArrayRight = Arrays.copyOfRange(arr, mid, arr.length - 1);
+        int[] left = mergeSort(cutArrayLeft); // recursively split left side
+        int[] right = mergeSort(cutArrayRight); // recursively split right side
+        // UNTIL OF LENGTH 1
+        return merge(left, right);
     }
     // private, static
-    public int[] mergeAlgorithm(int[] arrA, int[] arrB) {
-        int[] c = new int[arrA.length + arrB.length];
-        return c;
+    // assumes the passed arrays are sorted
+    // my code is NOT readable.
+    private static int[] merge(int[] left, int[] right) {
+        int[] result = new int[left.length + right.length];
+        int i = 0; // for left
+        int j = 0; // for right
+        int k = 0; // for result
+        while ( i < left.length && j < right.length ) {
+            if ( left[i] <= right[j] ) {
+                result[k] = left[i];
+                i++;
+            } else {
+                result[k] = right[j];
+                j++;
+            }
+            k++;
+            // this should get everything if dealing with equal length, even arrays.
+        }
+        // but for one with odd:
+        while ( i < left.length ) {
+            result[k] = left[i];
+            i++; k++;
+        }
+        while ( j < right.length ) {
+            result[k] = right[j];
+            j++; k++;
+        }
+        return result;
     }
-
     public int sequentialSearch(int[] arr, int x) {
         for ( int i = 0; i < arr.length; i++ ) {
             if (arr[i] == x) {

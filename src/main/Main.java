@@ -3,26 +3,28 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
         MethodApps m = new MethodApps();
-
-        /*
-        System.out.print("n = ");
-        int n = scan.nextInt();
-        int[] arr = new int[n];
-        for ( int i = 0; i < n; i++ ) {
-            System.out.print("index " + i + ": ");
-            int input = scan.nextInt();
-            arr[i] = input;
-        }
+        int[] arr = inputArray();
         printArray(arr);
-        */
-        int[] arr = { 1, 2, 3, 4, 5 };
+        int[] sortedArr = m.mergeSort(arr);
+        printArray(sortedArr);
     }
     private static void printArray(int[] a) {
         for ( int i : a ) {
             System.out.print(i + " ");
         }
         System.out.println();
+    }
+    private static int[] inputArray() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("length = ");
+        int length = scan.nextInt();
+        int[] arr = new int[length];
+        for ( int i = 0; i < length; i++ ) {
+            System.out.print("index " + i + ": ");
+            int input = scan.nextInt();
+            arr[i] = input;
+        }
+        return arr;
     }
 }
