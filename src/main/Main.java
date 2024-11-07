@@ -5,6 +5,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         MethodApps m = new MethodApps();
+
+        /*
         System.out.print("n = ");
         int n = scan.nextInt();
         int[] arr = new int[n];
@@ -14,7 +16,8 @@ public class Main {
             arr[i] = input;
         }
         printArray(arr);
-        printArray(m.insertionSort(arr));
+        */
+        int[] arr = { 1, 2, 3, 4, 5 };
     }
     private static void printArray(int[] a) {
         for ( int i : a ) {

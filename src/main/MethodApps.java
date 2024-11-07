@@ -1,4 +1,5 @@
 package main;
+import java.util.Arrays;
 public class MethodApps implements MethodInterface {
     public int[] intToBinary(int n) {
         int[] t = new int[32];
@@ -65,22 +66,7 @@ public class MethodApps implements MethodInterface {
         }
 
         return b;
-        /*
-         * [0, 1, 2, 3, 4]
-         * [3, 4, 0, 1, 2]
-         * d = 3
-         *
-         * smaller array part2 containing 0 -> d, will be pushed forward.
-         * smaller array part1 continaing d -> a.length, will be pushed back.
-         * b[0] -> part1
-         *
-         */
     }
-    
-    /* ALGORITHM PRACTICE */
-    /* i'm doing all of this on my own */
-    /* no google, just.. a prompt ya know, i gotta know what i wanna do */
-
     public int[] selectionSort(int[] initArr) {
         int[] arr = initArr; 
         // big boi loop
@@ -116,10 +102,55 @@ public class MethodApps implements MethodInterface {
         }
         return arr;
     }
-    
-    // merge sort
-    // sequential search
-    // binary search
+    /*
+     * recursive function
+     * input initArr
+     * BASE CASE: array is of length 1 or less, return array.
+     * mid int, left and right arrays assigned to return value of 
+     * mergeSort(left portion and right portion)
+     * recursively deals with smaller and smaller arrays until length of 1.
+     * return merge(array)
+     *
+     */
+    public int[] mergeSort(int[] arr) {
+        // base case
+        if (arr.length <= 1) {
+            return arr;
+        }
+        int mid = arr.length / 2;
+        int[] left; // recursively split lefts 
+        int[] right;
+        return arr;
+    }
+    // private, static
+    public int[] mergeAlgorithm(int[] arrA, int[] arrB) {
+        int[] c = new int[arrA.length + arrB.length];
+        return c;
+    }
+
+    public int sequentialSearch(int[] arr, int x) {
+        for ( int i = 0; i < arr.length; i++ ) {
+            if (arr[i] == x) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    // must be sorted
+    public int binarySearch(int[] arr, int x) {
+        int left = 0; int right = arr.length - 1;
+        while ( left <= right ) {
+            int mid = (right + left) / 2;
+            if (arr[mid] == x) {
+                return mid;
+            } else if (arr[mid] < x) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return -1;
+    }
     // removeDuplicates 
 
 }
