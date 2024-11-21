@@ -102,32 +102,21 @@ public class MethodApps implements MethodInterface {
         }
         return arr;
     }
-    /*
-     * recursive function
-     * input initArr
-     * BASE CASE: array is of length 1 or less, return array.
-     * mid int, left and right arrays assigned to return value of 
-     * mergeSort(left portion and right portion)
-     * recursively deals with smaller and smaller arrays until length of 1.
-     * return merge(array)
-     *
-     */
     public int[] mergeSort(int[] arr) {
         // base case
         if (arr.length <= 1) {
             return arr;
         }
         int mid = arr.length / 2;
-        int[] cutArrayLeft = Arrays.copyOfRange(arr, 0, mid);
-        int[] cutArrayRight = Arrays.copyOfRange(arr, mid, arr.length - 1);
-        int[] left = mergeSort(cutArrayLeft); // recursively split left side
-        int[] right = mergeSort(cutArrayRight); // recursively split right side
-        // UNTIL OF LENGTH 1
+        int[] arrLeftSide= Arrays.copyOfRange(arr, 0, mid);
+        int[] arrRightSide = Arrays.copyOfRange(arr, mid, arr.length);
+        // recursively split till arrays are of length 1.
+        int[] left = mergeSort(arrLeftSide);
+        int[] right = mergeSort(arrRightSide);
         return merge(left, right);
     }
-    // private, static
-    // assumes the passed arrays are sorted
-    // my code is NOT readable.
+    // two passed arrays must be sorted already,
+    // first time it's called, args will be length 1 arrays (sorted obv)
     private static int[] merge(int[] left, int[] right) {
         int[] result = new int[left.length + right.length];
         int i = 0; // for left
@@ -142,9 +131,9 @@ public class MethodApps implements MethodInterface {
                 j++;
             }
             k++;
-            // this should get everything if dealing with equal length, even arrays.
+            // this should get everything if dealing with even, equal length arrays.
         }
-        // but for one with odd:
+        // but for pairs with odd array
         while ( i < left.length ) {
             result[k] = left[i];
             i++; k++;

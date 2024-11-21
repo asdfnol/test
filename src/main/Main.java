@@ -3,11 +3,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        MethodApps m = new MethodApps();
-        int[] arr = inputArray();
-        printArray(arr);
-        int[] sortedArr = m.mergeSort(arr);
-        printArray(sortedArr);
+        int[] a = {1, 2, 3};
+        System.out.println(a[3]);
     }
     private static void printArray(int[] a) {
         for ( int i : a ) {
